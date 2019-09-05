@@ -1,10 +1,13 @@
 package tomiv.projects.AdManager.model;
 
+import org.apache.tomcat.jni.Local;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import java.sql.Date;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "ad4sale")
@@ -15,13 +18,12 @@ public class Ad4Sale extends Ad {
     private long id;
 
     @Column
-    private Date built;
+    private LocalDate built;
 
     @Column
     private int targetPrice;
 
     public Ad4Sale() {
-        super();
     }
 
     public long getId() {
@@ -32,11 +34,11 @@ public class Ad4Sale extends Ad {
         this.id = id;
     }
 
-    public Date getBuilt() {
+    public LocalDate getBuilt() {
         return built;
     }
 
-    public void setBuilt(Date built) {
+    public void setBuilt(LocalDate built) {
         this.built = built;
     }
 

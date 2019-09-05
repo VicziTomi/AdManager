@@ -7,11 +7,20 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "ad4rentroom")
-public class Ad4RentRoom extends Ad4Rent {
+public class Ad4RentRoom extends Ad {
 
     @Id
     @Column
     private long id;
+
+    @Column
+    private int monthlyFee;
+
+    @Column
+    private int monthlyOverhead;
+
+    @Column
+    private boolean isSmoker;
 
     @Column
     private int residents;
@@ -19,8 +28,40 @@ public class Ad4RentRoom extends Ad4Rent {
     @Column
     private Gender genderSeek;
 
-    public Ad4RentRoom() throws CloneNotSupportedException {
-        super();
+    public Ad4RentRoom() {
+
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public int getMonthlyFee() {
+        return monthlyFee;
+    }
+
+    public void setMonthlyFee(int monthlyFee) {
+        this.monthlyFee = monthlyFee;
+    }
+
+    public int getMonthlyOverhead() {
+        return monthlyOverhead;
+    }
+
+    public void setMonthlyOverhead(int monthlyOverhead) {
+        this.monthlyOverhead = monthlyOverhead;
+    }
+
+    public boolean isSmoker() {
+        return isSmoker;
+    }
+
+    public void setSmoker(boolean smoker) {
+        isSmoker = smoker;
     }
 
     public int getResidents() {

@@ -1,9 +1,6 @@
 package tomiv.projects.AdManager.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "ad4rent")
@@ -23,7 +20,6 @@ public class Ad4Rent extends Ad {
     private boolean isSmoker;
 
     public Ad4Rent() {
-        super();
     }
 
     public long getId() {
