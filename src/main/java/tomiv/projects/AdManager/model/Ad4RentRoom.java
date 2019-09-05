@@ -1,17 +1,16 @@
 package tomiv.projects.AdManager.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "ad4rentroom")
 public class Ad4RentRoom extends Ad {
 
     @Id
+    @SequenceGenerator(name = "ad4rentRoomGenerator", initialValue = 1, allocationSize = 1)
+    @GeneratedValue(generator = "ad4rentRoomGenerator", strategy = GenerationType.SEQUENCE)
     @Column
-    private long id;
+    private Long id;
 
     @Column
     private int monthlyFee;

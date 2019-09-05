@@ -7,8 +7,10 @@ import javax.persistence.*;
 public class Ad4Rent extends Ad {
 
     @Id
+    @SequenceGenerator(name = "ad4rentGenerator", initialValue = 1, allocationSize = 1)
+    @GeneratedValue(generator = "ad4rentGenerator", strategy = GenerationType.SEQUENCE)
     @Column
-    private long id;
+    private Long id;
 
     @Column
     private int monthlyFee;

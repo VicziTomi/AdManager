@@ -1,12 +1,6 @@
 package tomiv.projects.AdManager.model;
 
-import org.apache.tomcat.jni.Local;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import java.sql.Date;
+import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
@@ -14,8 +8,10 @@ import java.time.LocalDate;
 public class Ad4Sale extends Ad {
 
     @Id
+    @SequenceGenerator(name = "ad4SaleGenerator", initialValue = 1, allocationSize = 1)
+    @GeneratedValue(generator = "ad4SaleGenerator", strategy = GenerationType.SEQUENCE)
     @Column
-    private long id;
+    private Long id;
 
     @Column
     private LocalDate built;
