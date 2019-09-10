@@ -1,17 +1,20 @@
 package tomiv.projects.AdManager.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
 @Table(name = "ad4sale")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Ad4Sale extends Ad {
 
     @Id
     @SequenceGenerator(name = "ad4SaleGenerator", initialValue = 1, allocationSize = 1)
     @GeneratedValue(generator = "ad4SaleGenerator", strategy = GenerationType.SEQUENCE)
     @Column
-    private Long id;
+    private long id;
 
     @Column
     private LocalDate built;

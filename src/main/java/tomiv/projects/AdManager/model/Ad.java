@@ -1,20 +1,28 @@
 package tomiv.projects.AdManager.model;
 
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import javax.persistence.MappedSuperclass;
+import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @MappedSuperclass
-abstract class Ad {
+public abstract class Ad {
 
+    @NotNull
     private String description;
-    private String settlement;
-    private LocalDate movable;
-    private LocalDateTime created;
-    private boolean deleted;
 
-    public Ad() {
-    }
+    @NotNull
+    private String settlement;
+
+    private LocalDate movable;
+
+    private LocalDateTime created = LocalDateTime.now();
+
+    private boolean deleted = false;
 
     public String getDescription() {
         return description;

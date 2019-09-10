@@ -1,16 +1,20 @@
 package tomiv.projects.AdManager.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.springframework.beans.factory.annotation.Autowired;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "ad4rent")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Ad4Rent extends Ad {
 
     @Id
     @SequenceGenerator(name = "ad4rentGenerator", initialValue = 1, allocationSize = 1)
     @GeneratedValue(generator = "ad4rentGenerator", strategy = GenerationType.SEQUENCE)
     @Column
-    private Long id;
+    private long id;
 
     @Column
     private int monthlyFee;

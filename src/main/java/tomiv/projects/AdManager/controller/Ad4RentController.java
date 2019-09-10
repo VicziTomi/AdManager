@@ -20,8 +20,8 @@ public class Ad4RentController {
         return ResponseEntity.ok(ad4RentService.save(ad4Rent));
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<Ad4Rent> getAd(@PathVariable Long id) {
+    @GetMapping("{id}")
+    public ResponseEntity<Ad4Rent> getAd(@PathVariable(name = "id") long id) {
         return ResponseEntity.ok(ad4RentService.getOne(id));
     }
 
@@ -30,8 +30,8 @@ public class Ad4RentController {
         return ad4RentService.getAll();
     }
 
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteAd(@PathVariable Long id) {
+    @DeleteMapping("{id}")
+    public ResponseEntity<Void> deleteAd(@PathVariable("id") Long id) {
         ad4RentService.deleteOne(id);
         return ResponseEntity.noContent().build();
     }

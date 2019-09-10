@@ -34,8 +34,10 @@ public class Ad4RentService {
     }
 
     public void deleteOne(Long id) {
-        Ad4Rent ad4Rent = getOne(id);
-        ad4Rent.setDeleted(true);
-        ad4RentRepository.save(ad4Rent);
+        if (ad4RentRepository.existsById(id)) {
+            Ad4Rent ad4Rent = getOne(id);
+            ad4Rent.setDeleted(true);
+            ad4RentRepository.save(ad4Rent);
+        }
     }
 }
